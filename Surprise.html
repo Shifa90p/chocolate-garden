@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gollu Molu's Chocolate Garden 💖</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:linear-gradient(135deg,#fff0f5,#ffe4c4);
+overflow-x:hidden;
+min-height:100vh;
+text-align:center;
+padding:30px;
+}
+
+h1{
+color:#7b3f00;
+font-size:3rem;
+margin-top:20px;
+}
+
+.subtitle{
+font-size:1.2rem;
+color:#8b5e3c;
+margin-bottom:25px;
+}
+
+.card{
+background:white;
+max-width:700px;
+margin:auto;
+padding:30px;
+border-radius:25px;
+box-shadow:0 10px 30px rgba(0,0,0,0.15);
+}
+
+.cat{
+font-size:100px;
+}
+
+.message{
+font-size:1.2rem;
+margin:20px 0;
+line-height:1.8;
+color:#444;
+}
+
+button{
+padding:14px 25px;
+border:none;
+border-radius:50px;
+background:#ff69b4;
+color:white;
+font-size:1rem;
+cursor:pointer;
+margin:10px;
+transition:0.3s;
+}
+
+button:hover{
+transform:scale(1.08);
+}
+
+#surprise{
+margin-top:20px;
+font-size:1.3rem;
+color:#7b3f00;
+font-weight:bold;
+}
+
+.flower{
+position:fixed;
+top:-50px;
+font-size:30px;
+animation:fall linear infinite;
+}
+
+.chocolate{
+position:fixed;
+top:-50px;
+font-size:28px;
+animation:fall linear infinite;
+}
+
+@keyframes fall{
+0%{
+transform:translateY(-50px);
+}
+100%{
+transform:translateY(110vh);
+}
+}
+</style>
+</head>
+
+<body>
+
+<script>
+const password = prompt("🌸 Enter Secret Password:");
+
+if (password !== "mahi123") {
+    document.body.innerHTML = `
+    <div style="
+        text-align:center;
+        margin-top:100px;
+        font-family:sans-serif;
+    ">
+        <h1>🔒 Access Denied</h1>
+        <p>Wrong password.</p>
+    </div>
+    `;
+    window.stop();
+}
+</script>
+
+<h1>🌸 Gollu Molu's Chocolate Garden 🍫</h1>
+<p class="subtitle">
+For my favorite Brown Scottish Fold Kitty 🐱🤎
+</p>
+
+<div class="card">
+
+<div class="cat">🐱</div>
+
+<div class="message">
+Dear Gollu Molu,<br><br>
+
+This tiny website is made specially for you Mahiiiiiiiiiiii 🌸.<br><br>
+
+Whenever you smile, the whole garden blooms. 🌷💖
+</div>
+
+<button onclick="showReason()">Why You're Awesome 🌸</button>
+
+<button onclick="showChocolate()">Chocolate Surprise 🍫</button>
+
+<div id="surprise"></div>
+
+</div>
+
+<script>
+
+const reasons = [
+"🌸 Your smile can make any day better.",
+"🍫 You're sweeter than chocolate.",
+"🐱 You're the cutest Scottish Fold kitty.",
+"💖 You make people feel special.",
+"🌷 You deserve happiness every day.",
+"🌹 You're amazing just by being yourself."
+];
+
+const chocolates = [
+"🍫 Free unlimited chocolate hugs!",
+"💖 Sending 1000 friendship points!",
+"🌸 Virtual flower bouquet unlocked!",
+"🐱 Kitty cuddle activated!",
+"🍩 Sweetness level: Maximum!"
+];
+
+function showReason(){
+document.getElementById("surprise").innerHTML =
+reasons[Math.floor(Math.random()*reasons.length)];
+}
+
+function showChocolate(){
+document.getElementById("surprise").innerHTML =
+chocolates[Math.floor(Math.random()*chocolates.length)];
+}
+
+function createFlower(){
+const flower=document.createElement("div");
+flower.className="flower";
+flower.innerHTML="🌸";
+flower.style.left=Math.random()*100+"vw";
+flower.style.animationDuration=(5+Math.random()*5)+"s";
+document.body.appendChild(flower);
+
+setTimeout(()=>{
+flower.remove();
+},10000);
+}
+
+function createChocolate(){
+const chocolate=document.createElement("div");
+chocolate.className="chocolate";
+chocolate.innerHTML="🍫";
+chocolate.style.left=Math.random()*100+"vw";
+chocolate.style.animationDuration=(6+Math.random()*5)+"s";
+document.body.appendChild(chocolate);
+
+setTimeout(()=>{
+chocolate.remove();
+},10000);
+}
+
+setInterval(createFlower,800);
+setInterval(createChocolate,1200);
+
+</script>
+
+</body>
+</html>
